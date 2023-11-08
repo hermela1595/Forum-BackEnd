@@ -8,8 +8,7 @@ require("dotenv").config();
 //   database: process.env.MYSQL_DB,
 //   connectionLimit: 10,
 // });
-const pool = mysql2.createConnection(process.env.DATABASE_URL)
-
+const pool = mysql2.createConnection(process.env.DATABASE_URL);
 
 let registration = `CREATE TABLE IF NOT EXISTS registration(
   user_id INT AUTO_INCREMENT, 
