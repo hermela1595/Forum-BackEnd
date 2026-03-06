@@ -1,41 +1,6 @@
 const pool = require("../../config/database");
 
 module.exports = {
-  // createQuestion: (data, callback) => {
-  //   return new Promise((resolve, reject) => {
-  //     pool.query(
-  //       "INSERT INTO question (question, question_description, user_id) VALUES (?, ?, ?, ?)",
-  //       [question, description, codeBlock, tags, userId],
-  //       (error, result) => {
-  //         if (error) {
-  //           return reject(error);
-  //         }
-  //         const questionId = result.insertId;
-  //         resolve({
-  //           questionId,
-  //           question,
-  //           description,
-  //           codeBlock,
-  //           tags,
-  //           userId,
-  //         });
-  //       }
-  //     );
-  //   });
-  // },
- 
-
-  // getAllQuestions: () => {
-  //   return new Promise((resolve, reject) => {
-  //     pool.query("SELECT * FROM question", (error, result) => {
-  //       if (error) {
-  //         return reject(error);
-  //       }
-  //       resolve(result);
-  //     });
-  //   });
-  // },
-
   createQuestion: (data, callback) => {
     pool.query(
       "INSERT INTO question(question, question_description, user_id)VALUES(?,?,?)",

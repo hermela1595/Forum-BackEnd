@@ -44,8 +44,6 @@ module.exports = {
 
     createQuestion: (req, res) => {
       const { question, question_description } = req.body;
-      // console.log("question title ", title);
-      // console.log(" question description ", description);
   
       if (!question || !question_description)
         return res
@@ -71,10 +69,7 @@ module.exports = {
           console.log("get Questions: ", err);
           return res.status(500).json({ msg: "Database connection error." });
         }
-        // console.log(">>>>>>> getQestions: response passed");
-        //   console.log(res);
-        //   console.log(results);
-        //   return res;
+        
         return res.status(200).json({ data: results });
       });
   },
