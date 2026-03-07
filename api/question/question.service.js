@@ -3,14 +3,20 @@ const pool = require("../../config/database");
 module.exports = {
   createQuestion: (data, callback) => {
     pool.query(
-      "INSERT INTO question(question, question_description, user_id)VALUES(?,?,?)",
-      [data.question, data.description, data.user_id],
+      "INSERT INTO question(question, question_description, question_code_block, tags, user_id) VALUES (?, ?, ?, ?, ?)",
+      [
+        data.question,
+        data.question_description,
+        data.question_code_block || "",
+        data.tags || "",
+        data.user_id,
+      ],
       (err, result) => {
         if (err) {
           return callback(err);
         }
         return callback(null, result);
-      }
+      },
     );
   },
   getAllQuestions: (callback) => {
@@ -24,7 +30,7 @@ module.exports = {
         console.log(">>>>>>> importQuestions:  passed");
         // console.log(">>>>>>>>> importQuestions: ", result);
         return callback(null, result);
-      }
+      },
     );
   },
 };

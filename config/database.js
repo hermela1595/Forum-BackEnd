@@ -5,10 +5,10 @@ const pool = mysql2.createPool({
   host: process.env.DB_HOST,
   user: process.env.DB_USER,
   password: process.env.DB_PASS,
-  database: process.env.MYSQL_DB,
+  database: process.env.DB_NAME,
   connectionLimit: 10,
 });
-// const pool = mysql2.createConnection(process.env.MYSQL_DB);
+// const pool = mysql2.createConnection(process.env.DATABASE_URL);
 
 let registration = `CREATE TABLE IF NOT EXISTS registration(
   user_id INT AUTO_INCREMENT, 

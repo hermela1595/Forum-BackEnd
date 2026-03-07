@@ -2,13 +2,16 @@ const pool = require("../../config/database");
 
 module.exports = {
   addAnswer: (data, callback) => {
+    const questionId = Number(data.questionId);
+    const userId = Number(data.user_id);
+
     pool.query(
       `INSERT INTO answer(answer_text, question_id, user_id)VALUES(?, ?, ?)`,
-      [data.answer, data.questionId, data.user_id],
+      [data.answer, questionId, userId],
       (err, result) => {
         if (err) return callback(err);
         return callback(null, result);
-      }
+      },
     );
   },
 
@@ -20,7 +23,7 @@ module.exports = {
       (err, result) => {
         if (err) return callback(err);
         return callback(null, result);
-      }
+      },
     );
   },
 };
