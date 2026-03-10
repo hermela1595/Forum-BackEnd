@@ -51,6 +51,28 @@ FRONTEND_ORIGINS=https://your-forum.vercel.app,https://www.yourdomain.com
 - Deploy backend (`Forum-BackEnd`) on Render, Railway, or Fly.io.
 - In frontend env (`NEXT_PUBLIC_API_BASE_URL`), set your backend public URL.
 
+## Troubleshooting
+
+### Error: Cannot find module `node:buffer`
+
+Cause: Backend is running on an old Node.js version (commonly Node 10/12).
+
+Fix:
+
+1. Upgrade runtime to Node 18+ (recommended Node 18 or 20).
+2. Reinstall dependencies after upgrade:
+
+```bash
+rm -rf node_modules package-lock.json
+npm install
+```
+
+3. Restart server:
+
+```bash
+npm start
+```
+
 ## Fly.io Deployment (Recommended for your choice)
 
 1. Install Fly CLI and authenticate:
