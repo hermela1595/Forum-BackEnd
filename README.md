@@ -96,7 +96,7 @@ fly apps create <your-unique-app-name>
 4. Set secrets:
 
 ```bash
-fly secrets set FRONTEND_ORIGINS=https://<your-vercel-domain> DB_HOST=<db-host> DB_USER=<db-user> DB_PASS=<db-password> MYSQL_DB=<db-name>
+fly secrets set FRONTEND_ORIGINS=https://<your-vercel-domain> DB_HOST=<db-host> DB_USER=<db-user> DB_PASS=<db-password> DB_NAME=<db-name>
 ```
 
 5. Deploy:
