@@ -3,6 +3,9 @@
 app = "hermela-evangadi-api"
 primary_region = "iad"
 
+[build]
+  dockerfile = "Dockerfile"
+
 [env]
   NODE_ENV = "production"
   PORT = "8080"
